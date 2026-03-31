@@ -1,0 +1,36 @@
+# RnacherDesktop - 4CPU/8GB - builds kubernetes cluster on single VM for the test development:
+https://docs.rancherdesktop.io/getting-started/installation
+
+# homebrew on unix to have similar packages as on MacOS and even more 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
+brew install kubectl k9s
+
+==> Next steps:
+- Run these commands in your terminal to add Homebrew to your PATH:
+    echo >> /home/k9s/.bashrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >> /home/k9s/.bashrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+- Install Homebrew's dependencies if you have sudo access:
+    sudo apt-get install build-essential
+
+# install tmux
+sudo apt install -y tmux vim
+
+----------------------------------------------------------------------
+# GUI:
+# LXQt (extremely lightweight):
+sudo apt install lubuntu-desktop -y   # or just lxqt for core only
+
+Quick Checks After Reboot
+
+In terminal (Ctrl+Alt+F3 if needed):Bash
+echo $XDG_SESSION_TYPE   # should say "wayland" or "x11" after login
+
+To switch back to console mode temporarily:Bash
+sudo systemctl isolate multi-user.target
+
+To return to GUI:Bash
+sudo systemctl isolate graphical.target
+----------------------------------------------------------------------
